@@ -1,0 +1,1 @@
+number_attack_types = 3
