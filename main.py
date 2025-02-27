@@ -1,10 +1,11 @@
-from bomber import start_call_bomber, start_sms_bomber
+from bomber import start_call_bomber, start_sms_bomber, start_callback_bomber, start_bomber
 from config import number_attack_types
 
 import time
 
 
 def start():
+    start_bomber('123')
     print('Example: 79999999999')
     phone = input('Enter your phone number (without +): ')
 
@@ -12,7 +13,7 @@ def start():
     Attack types list
     1. SMS
     2. Call
-    3. All
+    3. Callback
     """)
 
     type_attack = int(input('Select attack type: '))
@@ -22,6 +23,8 @@ def start():
             start_sms_bomber(phone)
         elif type_attack == 2:
             start_call_bomber(phone)
+        elif type_attack == 3:
+            start_callback_bomber(phone)
     else:
         print('Please select correct type, restart... \n')
         time.sleep(1.5)
